@@ -7,11 +7,16 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   // Filed
+  String name, email, password;
+  final fromKey = GlobalKey<FormState>();
 
   // Method
   Widget nameText() {
     Color color = Colors.red.shade900;
     return TextFormField(
+      onSaved: (value) {
+        name = value;
+      },
       decoration: InputDecoration(
         icon: Icon(
           Icons.face,
@@ -30,6 +35,9 @@ class _RegisterState extends State<Register> {
   Widget emailText() {
     Color color = Colors.purple.shade900;
     return TextFormField(
+      onSaved: (value) {
+        email = value;
+      },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         icon: Icon(
@@ -49,6 +57,9 @@ class _RegisterState extends State<Register> {
   Widget passwordText() {
     Color color = Colors.green.shade900;
     return TextFormField(
+      onSaved: (value) {
+        password = value;
+      },
       decoration: InputDecoration(
         icon: Icon(
           Icons.lock,
@@ -67,7 +78,10 @@ class _RegisterState extends State<Register> {
   Widget registerButton() {
     return IconButton(
       icon: Icon(Icons.cloud_upload),
-      onPressed: () {},
+      onPressed: () {
+        fromKey.currentState.save();
+        print('name = $name, email = $email, password = $password');
+      },
     );
   }
 
@@ -83,15 +97,19 @@ class _RegisterState extends State<Register> {
         decoration: BoxDecoration(
             gradient: RadialGradient(
           colors: [Colors.white, Colors.blue.shade700],
-          radius: 1.5,center: Alignment.topCenter,
+          radius: 1.5,
+          center: Alignment.topCenter,
         )),
-        child: ListView(
-          padding: EdgeInsets.all(30.0),
-          children: <Widget>[
-            nameText(),
-            emailText(),
-            passwordText(),
-          ],
+        child: Form(
+          key: fromKey,
+          child: ListView(
+            padding: EdgeInsets.all(30.0),
+            children: <Widget>[
+              nameText(),
+              emailText(),
+              passwordText(),
+            ],
+          ),
         ),
       ),
     );
