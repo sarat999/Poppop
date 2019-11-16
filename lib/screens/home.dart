@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poppop/screens/register.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,7 +34,14 @@ class _HomeState extends State<Home> {
         'Sign Up',
         style: TextStyle(color: Colors.blue[400]),
       ),
-      onPressed: () {},
+      onPressed: () {
+        print('You Click SignUp');
+        
+        MaterialPageRoute materialPageRoute = MaterialPageRoute(builder: (BuildContext context){return Register();});
+        Navigator.of(context).push(materialPageRoute);
+
+
+      },
     );
   }
 
@@ -124,7 +132,7 @@ class _HomeState extends State<Home> {
               ),
               padding: EdgeInsets.all(18.0),
               // color: Color.fromARGB(180,255,255,255),
-              child: SinggleChaidScrollView(
+              child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
