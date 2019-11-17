@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "585838877987",
+    "firebase_url": "https://poppop-c534f.firebaseio.com",
+    "project_id": "poppop-c534f",
+    "storage_bucket": "poppop-c534f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585838877987:android:04565fc200a651275d8096",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.poppop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585838877987-k4vadbq0vu6ike9t8u0fp4mkgh3mb3ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMsL5ZtqAY9aqwyh1RdlpdISb5zjPnYsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585838877987-k4vadbq0vu6ike9t8u0fp4mkgh3mb3ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
